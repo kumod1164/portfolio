@@ -19,16 +19,22 @@ export default function Navigation() {
   }, [])
 
   const handleResumeOpenAndDownload = () => {
-    const url = "/Kumod-Sharma-Resume.pdf";
-    // Open in new tab
-    window.open(url, "_blank");
-    // Trigger download
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "Kumod-Sharma-Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const tab = window.open("", "_blank")
+    if (tab) {
+      tab.document.write(`
+        <html><body>
+          <script>
+            const a = document.createElement("a");
+            a.href = "/Kumod-Sharma-Resume.pdf";
+            a.download = "Kumod-Sharma-Resume.pdf";
+            document.body.appendChild(a);
+            a.click();
+            setTimeout(() => window.close(), 500);
+          </script>
+        </body></html>
+      `)
+      tab.document.close()
+    }
   }
 
   const navLinks = [
@@ -77,7 +83,7 @@ export default function Navigation() {
           </button> */}
             <button
             onClick={handleResumeOpenAndDownload}
-            className="hidden md:flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
+            className="cursor-pointer hidden md:flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
           >
             <Download size={18} className="group-hover:animate-bounce" />
             <span className="font-semibold">Download Resume</span>
@@ -108,7 +114,7 @@ export default function Navigation() {
               <li className="px-4 py-2">
               <button
                   onClick={handleResumeOpenAndDownload}
-                  className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg w-full justify-center group"
+                  className="cursor-pointer flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg w-full justify-center group"
                 >
                   <Download size={18} className="group-hover:animate-bounce" />
                   <span className="font-semibold">Download Resume</span>

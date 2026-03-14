@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Download } from "lucide-react"
 
 export default function HeroSection() {
   const titles = ["Full Stack Web Developer", "Passionate Learner", "Tech Enthusiast"]
@@ -41,9 +40,6 @@ export default function HeroSection() {
     }
   }, [displayText, currentIndex, isTyping, titles])
 
-  const handleResumeDownload = () => {
-    window.open("https://drive.google.com/file/d/1UTfCUehsleS3UGjEuJv-YKvYxjeohLYq/view?usp=drive_link", "_blank")
-  }
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 ">
@@ -100,17 +96,6 @@ export default function HeroSection() {
             className="animate-fade-in-up flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
             style={{ animationDelay: "0.6s" }}
           >
-            {/* <button
-              onClick={handleResumeDownload}
-              className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
-            >
-              <span className="flex items-center gap-3">
-                <Download size={20} className="group-hover:animate-bounce" />
-                Download Resume
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-            </button> */}
-
             <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105"
