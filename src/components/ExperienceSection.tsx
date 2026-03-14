@@ -2,6 +2,18 @@
 
 import Image from "next/image"
 
+function calcDuration(startDate: string, endDate?: string): string {
+  const start = new Date(startDate)
+  const end = endDate ? new Date(endDate) : new Date()
+  const months =
+    (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth())
+  const years = Math.floor(months / 12)
+  const remainingMonths = months % 12
+  if (years === 0) return `${remainingMonths} mo${remainingMonths !== 1 ? "s" : ""}`
+  if (remainingMonths === 0) return `${years} yr${years !== 1 ? "s" : ""}`
+  return `${years} yr${years !== 1 ? "s" : ""} ${remainingMonths} mo${remainingMonths !== 1 ? "s" : ""}`
+}
+
 export default function ExperienceSection() {
   const experiences = [
     {
@@ -10,7 +22,7 @@ export default function ExperienceSection() {
       company: "FARMINSTA",
       type: "Full-time",
       duration: "Sep 2024 - Present",
-      period: "11 mos",
+      period: calcDuration("2024-09-01"),
       location: "Hyderabad, India",
       logo: "/images/fi.png",
       logoColor: "bg-green-100",

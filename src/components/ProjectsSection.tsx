@@ -102,14 +102,14 @@ export default function ProjectsSection() {
                   <div className="flex gap-4">
                     <button
                       onClick={() => handleLinkClick(project.githubUrl)}
-                      className="flex items-center gap-3 px-6 py-3 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg bg-gray-800 hover:bg-gray-700"
+                      className="flex items-center gap-3 px-6 py-3 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg bg-gray-800 hover:bg-gray-700 cursor-pointer"
                     >
                       <Github size={20} />
                       GitHub
                     </button>
                     <button
                       onClick={() => handleLinkClick(project.liveUrl)}
-                      className="flex items-center gap-3 px-6 py-3 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg bg-green-700 hover:bg-greem-700"
+                      className="cursor-pointer flex items-center gap-3 px-6 py-3 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg bg-green-700 hover:bg-greem-700"
                     >
                       <ExternalLink size={20} />
                       View Live

@@ -11,8 +11,8 @@ export default function SkillsSection() {
     { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
     { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
     { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-    { name: "Tailwind CSS", icon: "/images/icon/tailwind.png" },
-    { name: "Apollo Client", icon: "/images/icon/apollo.png" },
+    { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+    { name: "Apollo Client", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apollographql/apollographql-original.svg" },
     { name: "GraphQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
     { name: "Hasura", icon: "/images/icon/hasura.png" },
     { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
@@ -30,7 +30,7 @@ export default function SkillsSection() {
     { name: "NPM", icon: "https://cdn.icon-icons.com/icons2/2415/PNG/512/npm_original_wordmark_logo_icon_146402.png" },
     { name: "Netlify", icon: "/images/icon/netlify.png" },
     { name: "Cyclic.sh", icon: "/images/icon/cyclic.png" },
-    { name: "Apollo Client", icon: "/images/icon/apollo.png" },
+    { name: "Apollo Client", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apollographql/apollographql-original.svg" },
     { name: "GraphQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
   ]
 

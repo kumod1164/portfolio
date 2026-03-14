@@ -1,12 +1,60 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shine: shine 1.5s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes shine {
+    from { left: -100%; }
+    to { left: 100%; }
+  }
+  @keyframes glow {
+    from { filter: brightness(1) blur(10px); }
+    to { filter: brightness(1.2) blur(15px); }
+  }
+}
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
-
   body {
     @apply antialiased;
   }
@@ -16,15 +64,12 @@
   .section-padding {
     @apply py-20 px-4 sm:px-6 lg:px-8;
   }
-
   .container-max {
     @apply max-w-7xl mx-auto;
   }
-
   .section-title {
     @apply text-4xl font-bold text-gray-800 mb-4;
   }
-
   .section-title-underline {
     @apply border-b-4 border-blue-600 pb-2;
   }
@@ -34,46 +79,32 @@
   .text-gradient {
     @apply bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent;
   }
-
   .hover-lift {
     @apply hover:-translate-y-2 transition-transform duration-300;
   }
-
   .card-shadow {
     @apply shadow-lg hover:shadow-xl transition-shadow duration-300;
   }
 }
 
-/* Custom animations */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Smooth scrolling for older browsers */
 @media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
 }
 
-/* Focus styles for accessibility */
 button:focus-visible,
 a:focus-visible {
   @apply outline-2 outline-blue-600 outline-offset-2;
 }
 
-/* Loading animation */
 .loading-spinner {
   @apply animate-spin rounded-full border-4 border-gray-200 border-t-blue-600;
 }
