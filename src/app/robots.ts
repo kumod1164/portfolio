@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://kumod-portfolio.vercel.app/sitemap.xml",
+    sitemap: "https://kumod-sharma-portfolio.vercel.app/sitemap.xml",
   }
 }

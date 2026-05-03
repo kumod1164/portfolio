@@ -9,7 +9,7 @@ import { ClickBurstEffect } from "@/components/glitter-overlay"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kumod-portfolio.vercel.app"),
+  metadataBase: new URL("https://kumod-sharma-portfolio.vercel.app"),
   title: {
     default: "Kumod Kumar Sharma - Full Stack Web Developer",
     template: "%s | Kumod Kumar Sharma",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "kumod1164",
     "kumodsharma",
   ],
-  authors: [{ name: "Kumod Kumar Sharma", url: "https://kumod-portfolio.vercel.app" }],
+  authors: [{ name: "Kumod Kumar Sharma", url: "https://kumod-sharma-portfolio.vercel.app" }],
   creator: "Kumod Kumar Sharma",
   publisher: "Kumod Kumar Sharma",
   robots: {
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://kumod-portfolio.vercel.app",
+    canonical: "https://kumod-sharma-portfolio.vercel.app",
   },
   openGraph: {
     title: "Kumod Kumar Sharma - Full Stack Web Developer",
     description:
       "Kumod Kumar Sharma — Full Stack Web Developer specializing in MERN stack. React, Node.js, MongoDB, Express.js.",
-    url: "https://kumod-portfolio.vercel.app",
+    url: "https://kumod-sharma-portfolio.vercel.app",
     siteName: "Kumod Kumar Sharma Portfolio",
     type: "website",
     locale: "en_IN",
@@ -80,7 +80,7 @@ const jsonLd = {
   "@type": "Person",
   name: "Kumod Kumar Sharma",
   alternateName: ["Kumod", "Kumod Kumar", "Kumod Sharma", "kumod1164"],
-  url: "https://kumod-portfolio.vercel.app",
+  url: "https://kumod-sharma-portfolio.vercel.app",
   sameAs: [
     "https://github.com/kumod1164",
     "https://kumod1164.github.io",
@@ -111,7 +111,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://kumod-portfolio.vercel.app" />
+        <link rel="canonical" href="https://kumod-sharma-portfolio.vercel.app" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
