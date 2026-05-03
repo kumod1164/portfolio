@@ -4,7 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import Navigation from "@/components/Navigation"
 import ScrollToTop from "@/components/ScrollToTop"
-import { ClickBurstEffect } from "@/components/glitter-overlay"
+// import { ClickBurstEffect } from "@/components/glitter-overlay"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -118,7 +118,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} bg-white text-gray-900`}>
-        <ClickBurstEffect />
+        {/* <ClickBurstEffect /> */}
         <Navigation />
         <main>{children}</main>
         <ScrollToTop />
