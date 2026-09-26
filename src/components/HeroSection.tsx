@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react"
 
 export default function HeroSection() {
-  const titles = ["Full Stack Web Developer", "Passionate Learner", "Tech Enthusiast"]
+  const titles = ["Full Stack Developer", "Passionate Learner", "Tech Enthusiast"]
   const [displayText, setDisplayText] = useState("")
   const [currentIndex, setCurrentIndex] = useState(
-    titles.findIndex(t => t === "Full Stack Web Developer") !== -1
-      ? titles.findIndex(t => t === "Full Stack Web Developer")
+    titles.findIndex(t => t === "Full Stack Developer") !== -1
+      ? titles.findIndex(t => t === "Full Stack Developer")
       : 0
   )
   const [isTyping, setIsTyping] = useState(true)
@@ -42,21 +42,21 @@ export default function HeroSection() {
 
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 ">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
         {/* Floating Shapes */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-60 animate-bounce"></div>
+        <div className="absolute top-20 left-10 w-16 h-16 bg-blue-200 rounded-full opacity-60 animate-bounce"></div>
         <div
-          className="absolute top-40 right-20 w-16 h-16 bg-purple-200 rounded-full opacity-60 animate-bounce"
+          className="absolute top-32 right-20 w-12 h-12 bg-purple-200 rounded-full opacity-60 animate-bounce"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute bottom-40 left-20 w-12 h-12 bg-indigo-200 rounded-full opacity-60 animate-bounce"
+          className="absolute bottom-32 left-20 w-10 h-10 bg-indigo-200 rounded-full opacity-60 animate-bounce"
           style={{ animationDelay: "2s" }}
         ></div>
         <div
-          className="absolute bottom-20 right-10 w-24 h-24 bg-pink-200 rounded-full opacity-60 animate-bounce"
+          className="absolute bottom-20 right-10 w-16 h-16 bg-pink-200 rounded-full opacity-60 animate-bounce"
           style={{ animationDelay: "0.5s" }}
         ></div>
 
@@ -66,15 +66,15 @@ export default function HeroSection() {
 
       {/* Main Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        <div className="space-y-8">
+        <div className="space-y-6">
           {/* Greeting */}
           <div className="animate-fade-in-up">
-            <h1 className="text-2xl md:text-4xl text-gray-600 font-light mb-2">👋 Hello, I'm</h1>
+            <h1 className="text-xl md:text-2xl text-gray-600 font-light mb-2">👋 Hello, I'm</h1>
           </div>
 
           {/* Name with Gradient */}
           <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            <h4 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h4 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">Kumod Kumar</span>
               <span> </span>
               <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">Sharma</span>
@@ -83,8 +83,8 @@ export default function HeroSection() {
 
           {/* Typing Effect */}
           <div className="animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20 inline-block">
-              <div className="text-2xl md:text-4xl text-gray-800 font-semibold h-16 flex items-center justify-center min-w-[300px]">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-white/20 inline-block">
+              <div className="text-xl md:text-3xl text-gray-800 font-semibold h-12 flex items-center justify-center min-w-[280px]">
                 <span className="text-blue-600">{displayText}</span>
                 <span className="animate-pulse ml-2 text-blue-600">|</span>
               </div>
@@ -93,31 +93,18 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div
-            className="animate-fade-in-up flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
+            className="animate-fade-in-up flex flex-col sm:flex-row gap-3 justify-center items-center pt-6"
             style={{ animationDelay: "0.6s" }}
           >
             <button
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105"
+              className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-full font-semibold text-base hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105"
             >
               Let's Connect
             </button>
           </div>
-
-          {/* Scroll Indicator */}
-          {/* <div className="animate-fade-in-up pt-12" style={{ animationDelay: "0.8s" }}>
-            <div className="flex flex-col items-center text-gray-500">
-              <span className="text-sm mb-2">Scroll to explore</span>
-              <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-                <div className="w-1 h-3 bg-gray-400 rounded-full animate-bounce mt-2"></div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div> */}
     </section>
   )
 }

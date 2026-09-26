@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import Navigation from "@/components/Navigation"
 import ScrollToTop from "@/components/ScrollToTop"
+import ChatBot from "@/components/ChatBot"
 // import { ClickBurstEffect } from "@/components/glitter-overlay"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -122,6 +123,7 @@ export default function RootLayout({
         <Navigation />
         <main>{children}</main>
         <ScrollToTop />
+        <ChatBot />
       </body>
     </html>
   )

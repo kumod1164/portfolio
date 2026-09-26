@@ -70,26 +70,26 @@ export default function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
             <span className="border-b-4 border-blue-600 pb-2">My Projects</span>
           </h2>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-12">
           {projects.map((project, index) => (
             <React.Fragment key={project.id}>
               <div
-                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
+                className={`grid lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
               >
                 {/* Project Image / Carousel */}
                 <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                   {project.images.length > 1 ? (
                     <Carousel images={project.images} title={project.title} />
                   ) : (
-                    <div className="relative h-80 rounded-xl overflow-hidden shadow-2xl group">
+                    <div className="relative h-64 rounded-lg overflow-hidden shadow-lg group">
                       <Image
                         src={project.images[0]}
                         alt={project.title}
@@ -101,39 +101,39 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Project Details */}
-                <div className={`space-y-6 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                <div className={`space-y-4 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
+                  <div className="flex flex-wrap gap-2 mb-3">
                     {project.techStack.map((tech) => (
                       <span
                         key={tech}
-                        className={`px-3 py-1 rounded-full text-white text-sm font-medium ${getTechStackColor(tech)}`}
+                        className={`px-2.5 py-1 rounded-full text-white text-xs font-medium ${getTechStackColor(tech)}`}
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <h3 className="text-3xl font-bold text-gray-800">{project.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-800">{project.title}</h3>
 
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                  <p className="text-gray-600 leading-relaxed text-base">
                     {project.description.split(/\*\*(.+?)\*\*/).map((part, i) =>
                       i % 2 === 1 ? <strong key={i} className="text-gray-800 font-semibold">{part}</strong> : part
                     )}
                   </p>
 
-                  <div className="flex gap-4">
+                  <div className="flex gap-3">
                     <button
                       onClick={() => window.open(project.githubUrl, "_blank")}
-                      className="flex items-center gap-3 px-6 py-3 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg bg-gray-800 hover:bg-gray-700 cursor-pointer"
+                      className="flex items-center gap-2 px-4 py-2 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:shadow-md bg-gray-800 hover:bg-gray-700 cursor-pointer text-sm"
                     >
-                      <Github size={20} />
+                      <Github size={16} />
                       GitHub
                     </button>
                     <button
                       onClick={() => window.open(project.liveUrl, "_blank")}
-                      className="cursor-pointer flex items-center gap-3 px-6 py-3 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg bg-green-700 hover:bg-green-600"
+                      className="cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full text-white transition-all duration-300 transform hover:scale-105 hover:shadow-md bg-green-700 hover:bg-green-600 text-sm"
                     >
-                      <ExternalLink size={20} />
+                      <ExternalLink size={16} />
                       View Live
                     </button>
                   </div>
@@ -141,7 +141,7 @@ export default function ProjectsSection() {
               </div>
 
               {index !== projects.length - 1 && (
-                <hr className="my-12 border-t-2 border-gray-200" />
+                <hr className="my-8 border-t-2 border-gray-200" />
               )}
             </React.Fragment>
           ))}
@@ -170,7 +170,7 @@ function Carousel({ images, title }: { images: string[]; title: string }) {
   }, [next])
 
   return (
-    <div className="relative h-80 rounded-xl overflow-hidden shadow-2xl group bg-gray-100">
+    <div className="relative h-64 rounded-lg overflow-hidden shadow-lg group bg-gray-100">
       {images.map((src, i) => (
         <div
           key={i}
@@ -193,14 +193,14 @@ function Carousel({ images, title }: { images: string[]; title: string }) {
         className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5 transition-all duration-200 opacity-0 group-hover:opacity-100 cursor-pointer z-10"
         aria-label="Previous image"
       >
-        <ChevronLeft size={20} />
+        <ChevronLeft size={18} />
       </button>
       <button
         onClick={next}
         className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5 transition-all duration-200 opacity-0 group-hover:opacity-100 cursor-pointer z-10"
         aria-label="Next image"
       >
-        <ChevronRight size={20} />
+        <ChevronRight size={18} />
       </button>
 
       {/* Dot indicators */}

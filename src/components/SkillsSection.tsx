@@ -35,30 +35,30 @@ export default function SkillsSection() {
   ]
 
   const SkillCard = ({ skill }: { skill: { name: string; icon: string } }) => (
-    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
-      <div className="flex flex-col items-center space-y-4">
-        <div className="relative w-16 h-16 group-hover:scale-110 transition-transform duration-300">
+    <div className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group">
+      <div className="flex flex-col items-center space-y-3">
+        <div className="relative w-12 h-12 group-hover:scale-110 transition-transform duration-300">
           <Image src={skill.icon || "/placeholder.svg"} alt={skill.name} fill className="object-contain" />
         </div>
-        <span className="text-gray-700 font-medium text-center">{skill.name}</span>
+        <span className="text-gray-700 font-medium text-center text-sm">{skill.name}</span>
       </div>
     </div>
   )
 
   return (
-    <section id="skills" className=" bg-gray-50">
+    <section id="skills" className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
             <span className="border-b-4 border-blue-600 pb-2">My Skills</span>
           </h2>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-12">
           {/* Tech Stacks */}
           <div>
-            <h3 className="text-3xl font-bold text-center text-gray-800 mb-12">Tech Stacks</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">Tech Stacks</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
               {techStacks.map((skill) => (
                 <SkillCard key={skill.name} skill={skill} />
               ))}
@@ -67,8 +67,8 @@ export default function SkillsSection() {
 
           {/* Tools & Libraries */}
           <div>
-            <h3 className="text-3xl font-bold text-center text-gray-800 mb-12">Tools & Libraries</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">Tools & Libraries</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
               {tools.map((tool) => (
                 <SkillCard key={tool.name} skill={tool} />
               ))}
