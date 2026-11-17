@@ -83,7 +83,7 @@ export default function Navigation() {
           </button> */}
             <button
             onClick={handleResumeOpenAndDownload}
-            className="cursor-pointer hidden md:flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group"
+            className="cursor-pointer hidden md:flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg group relative"
           >
             <Download size={18} className="group-hover:animate-bounce" />
             <span className="font-semibold">Download Resume</span>
@@ -114,7 +114,7 @@ export default function Navigation() {
               <li className="px-4 py-2">
               <button
                   onClick={handleResumeOpenAndDownload}
-                  className="cursor-pointer flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg w-full justify-center group"
+                  className="cursor-pointer flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg w-full justify-center group relative"
                 >
                   <Download size={18} className="group-hover:animate-bounce" />
                   <span className="font-semibold">Download Resume</span>
